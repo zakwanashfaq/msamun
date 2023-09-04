@@ -1,6 +1,3 @@
-Thanks for downloading this template!
+<h1>Official repository for MSA-MUN web application<h1/>
 
-Template Name: Rapid
-Template URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Intructions will be provided soon here
