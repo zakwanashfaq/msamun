@@ -12,7 +12,7 @@ function LandingPageFeaturedContent() {
         <div className="row row-cols-1 row-cols-md-1 align-items-sm-start align-items-lg-center g-5 pb-5">
           <div className="col d-flex flex-column align-items-start gap-2">
             <h2 className="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
-            <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+            <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We&apos;ll add onto it with another sentence and probably just keep going until we run out of words.</p>
             <a href="#" className="btn btn-secondary btn-md">View full post</a>
           </div>
           <div className="row px-4">
