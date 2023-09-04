@@ -1,0 +1,13 @@
+
+@keyframes colorChange {
+    0%   {background-color: #8B4513;}  /* SaddleBrown */
+    25%  {background-color: #A0522D;}  /* Sienna */
+    50%  {background-color: #D2691E;}  /* Chocolate */
+    75%  {background-color: #CD853F;}  /* Peru */
+    100% {background-color: #8B4513;}  /* SaddleBrown (back to start) */
+}
+
+.animate-bg {
+    animation: colorChange 15s infinite; 
+    color: #fff;
+}
