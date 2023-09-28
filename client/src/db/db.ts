@@ -11,6 +11,10 @@ class Database {
         return featured;
     }
 
+    static getEvents(): TEvent[]{
+        return Object.values(event);
+    }
+
     static getUpcomingEvents(eventIds: string[]): TEvent[]{
         const eventQuery = event;
         return eventIds.map(id => eventQuery[id]).filter(e => e !== undefined);

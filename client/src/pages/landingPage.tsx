@@ -5,6 +5,7 @@ import Database from '@/db/db';
 import { TEvent } from '@/db/events';
 import { TFeatured } from '@/db/featured';
 import { LandingPageData } from '@/enums/texts/landingPageData';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 type TLandingPageFeaturedContentProps = {
@@ -84,7 +85,7 @@ export function UpcomingEvents(props: TUpcomingEventsProps) {
         {props.items?.map(item => {
           return <>
             <label className="list-group-item rounded-3 py-3" >
-              {item.title}
+              <Link className='text-dark' href={"/events#" + item.id}>{item.title}</Link> 
               <span className="d-block small opacity-50">{item.subtitle}</span>
             </label>
           </>
@@ -99,7 +100,7 @@ export default function Home() {
   const [featuredPosts, setFeaturedPosts] = useState<TFeatured[] | null>(null);
 
   useEffect(() => {
-    const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9"]);
+    const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9", "xthv53xtxqq8lj525h1t696a4oostr6j"]);
     setUpcomingEvents(fetchedUpcomingEvents);
 
     const featuredPosts = Database.getFeatured();
