@@ -1,4 +1,5 @@
 import event, { TEvent } from "./events";
+import featured, { TFeatured } from "./featured";
 
 
 class Database {
@@ -6,8 +7,8 @@ class Database {
 
     }
 
-    static getFeatured(){
-
+    static getFeatured(): TFeatured[]{
+        return featured;
     }
 
     static getUpcomingEvents(eventIds: string[]): TEvent[]{

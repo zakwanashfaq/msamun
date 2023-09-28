@@ -3,18 +3,34 @@ import Hero from '@/components/hero';
 import { Navbar } from '@/components/navbar';
 import Database from '@/db/db';
 import { TEvent } from '@/db/events';
+import { TFeatured } from '@/db/featured';
 import { LandingPageData } from '@/enums/texts/landingPageData';
 import { useEffect, useState } from 'react';
 
-function LandingPageFeaturedContent() {
+type TLandingPageFeaturedContentProps = {
+  items: TFeatured[] | null
+}
+
+function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
+  let mainFeature: TFeatured | null;
+  let otherFeature: TFeatured[] = [];
+  props.items?.forEach(item => {
+    if (item.position == 1) {
+      mainFeature = item;
+    } else {
+      otherFeature.push(item)
+    }
+  })
   return (
     <>
       <div className="container px-4  pb-5">
         <div className="row row-cols-1 row-cols-md-1 align-items-sm-start align-items-lg-center g-5 pb-5">
           <div className="col d-flex flex-column align-items-start gap-2">
-            <h2 className="fw-bold text-body-emphasis">Left-aligned title explaining these awesome features</h2>
-            <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading. We&apos;ll add onto it with another sentence and probably just keep going until we run out of words.</p>
-            <a href="#" className="btn btn-secondary btn-md">View full post</a>
+            {/**@ts-ignore */}
+            <h2 className="fw-bold text-body-emphasis">{mainFeature?.title}</h2>
+            {/**@ts-ignore */}
+            <p className="text-body-secondary">{mainFeature?.content}</p>
+            {/* <a href="#" className="btn btn-secondary btn-md">View full post</a> */}
           </div>
           <div className="row px-4">
             <div className="g-4 col-12 col-md-6">
@@ -108,9 +124,14 @@ export function UpcomingEvents(props: TUpcomingEventsProps) {
 
 export default function Home() {
   const [upcomingEvents, setUpcomingEvents] = useState<TEvent[] | null>(null);
-  const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9"]);
+  const [featuredPosts, setFeaturedPosts] = useState<TFeatured[] | null>(null);
+
   useEffect(() => {
+    const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9"]);
     setUpcomingEvents(fetchedUpcomingEvents);
+
+    const featuredPosts = Database.getFeatured();
+    setFeaturedPosts(featuredPosts);
   }, [])
 
 
@@ -132,7 +153,7 @@ export default function Home() {
             <div className="fs-4 px-4 py-3 mt-5 mt-md-0">
               {LandingPageData.RIGHT_COLUMN_HEADING_TEXT}
             </div>
-            <LandingPageFeaturedContent />
+            <LandingPageFeaturedContent items={featuredPosts}/>
           </div>
         </div>
       </div>
