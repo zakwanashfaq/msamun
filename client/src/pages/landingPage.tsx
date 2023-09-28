@@ -1,9 +1,10 @@
 import { Footer } from '@/components/footer';
 import Hero from '@/components/hero';
-import { ListGroup } from '@/components/listGroup';
 import { Navbar } from '@/components/navbar';
+import Database from '@/db/db';
+import { TEvent } from '@/db/events';
 import { LandingPageData } from '@/enums/texts/landingPageData';
-import Script from 'next/script';
+import { useEffect, useState } from 'react';
 
 function LandingPageFeaturedContent() {
   return (
@@ -84,7 +85,35 @@ function DonateSection() {
   );
 }
 
+type TUpcomingEventsProps = {
+  items: TEvent[] | null
+}
+
+export function UpcomingEvents(props: TUpcomingEventsProps) {
+  return (
+    <>
+      <div className="list-group list-group-checkable d-grid gap-2 border-0">
+        {props.items?.map(item => {
+          return <>
+            <label className="list-group-item rounded-3 py-3" >
+              {item.title}
+              <span className="d-block small opacity-50">{item.subtitle}</span>
+            </label>
+          </>
+        })}
+      </div>
+    </>
+  );
+}
+
 export default function Home() {
+  const [upcomingEvents, setUpcomingEvents] = useState<TEvent[] | null>(null);
+  const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9"]);
+  useEffect(() => {
+    setUpcomingEvents(fetchedUpcomingEvents);
+  }, [])
+
+
   return (
     <div className="container-fluid p-0 m-0">
       <div className="container-fluid px-0 mx-0">
@@ -97,7 +126,7 @@ export default function Home() {
             <div className="fs-4 py-3">
               {LandingPageData.LEFT_COLUMN_HEADING_TEXT}
             </div>
-            <ListGroup />
+            <UpcomingEvents items={upcomingEvents} />
           </div>
           <div className="col-12 col-md-8">
             <div className="fs-4 px-4 py-3 mt-5 mt-md-0">
