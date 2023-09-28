@@ -100,7 +100,7 @@ export default function Home() {
   const [featuredPosts, setFeaturedPosts] = useState<TFeatured[] | null>(null);
 
   useEffect(() => {
-    const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9"]);
+    const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9", "xthv53xtxqq8lj525h1t696a4oostr6j"]);
     setUpcomingEvents(fetchedUpcomingEvents);
 
     const featuredPosts = Database.getFeatured();
