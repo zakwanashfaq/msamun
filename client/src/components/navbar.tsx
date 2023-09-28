@@ -1,6 +1,6 @@
 import { LandingPageData } from "@/enums/texts/landingPageData";
 import { NavLink } from "@/enums/navLinks";
-import "../css/nav.css"
+import Link from "next/link";
 
 export function Navbar(props: any) {
     return (
@@ -20,10 +20,10 @@ export function Navbar(props: any) {
             </nav>
             <header className="py-3 px-3 mb-4 border-bottom">
                 <div className="container d-flex flex-wrap justify-content-center">
-                    <a href="/" className="d-flex align-items-center mb-3 mb-lg-0 me-auto link-body-emphasis text-decoration-none">
+                    <Link href="/" className="d-flex align-items-center mb-3 mb-lg-0 me-auto link-body-emphasis text-decoration-none">
                         {/* <svg className="bi me-2" width="40" height="32"><use href="#bootstrap"></use></svg> */}
                         <span className="fs-4 fw-bold bg-gradient m-0 py-1 px-3 animate-bg">MSA-MUN</span>
-                    </a>
+                    </Link>
                     <div className=" mb-3 mb-lg-0 d-flex justify-content-center">
                         <button className="btn btn-success">{LandingPageData.DONATION_BUTTON_TEXT}</button>
                     </div>
