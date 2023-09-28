@@ -43,6 +43,15 @@ const featured: TFeatured[] = [
         position: 4,
         eventDate: 1695862472128,
         content: "Insert Content Here about fall event.\nLine2\nLine3"
+    },
+    {
+        id: "hdvkjsviwurgh394y493yfruihghegh73rhghhhhhh",
+        title: "Test Title 5",
+        subtitle: "Test subtitle",
+        datePosted:  1695862372128,
+        position: 4,
+        eventDate: 1695862472128,
+        content: "Insert Content Here about fall event.\nLine2\nLine3"
     }
 ]
 

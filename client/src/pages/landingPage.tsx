@@ -23,8 +23,8 @@ function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
   })
   return (
     <>
-      <div className="container px-4  pb-5">
-        <div className="row row-cols-1 row-cols-md-1 align-items-sm-start align-items-lg-center g-5 pb-5">
+      <div className="container px-4">
+        <div className="row row-cols-1 row-cols-md-1 align-items-sm-start align-items-lg-center g-5 pb-3">
           <div className="col d-flex flex-column align-items-start gap-2">
             {/**@ts-ignore */}
             <h2 className="fw-bold text-body-emphasis">{mainFeature?.title}</h2>
@@ -33,50 +33,22 @@ function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
             {/* <a href="#" className="btn btn-secondary btn-md">View full post</a> */}
           </div>
           <div className="row px-4">
-            <div className="g-4 col-12 col-md-6">
-              <div className="col d-flex flex-column gap-2 py-3">
-                <div className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
-                  <svg className="bi" width="5em" height="7em">
-                    <use ></use>
-                  </svg>
+            {otherFeature.sort((a, b) => a.position - b.position).map(items => {
+              return <>
+              <div className="g-4 col-12 col-md-6">
+                <div className="col d-flex flex-column gap-2 py-3">
+                  {/* <div className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
+                    <svg className="bi" width="5em" height="7em">
+                      <use ></use>
+                    </svg>
+                  </div> */}
+                  <h4 className="fw-semibold mb-0 text-body-emphasis">{items.title}</h4>
+                  <p className="text-body-secondary">{items.content}</p>
+                  {/* <a href="#" className="btn btn-secondary btn-sm">View full post</a> */}
                 </div>
-                <h4 className="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-                <a href="#" className="btn btn-secondary btn-sm">View full post</a>
-              </div>
-              <div className="col d-flex flex-column gap-2 py-3">
-                {/* <div className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
-                  <svg className="bi" width="1em" height="1em">
-                    <use ></use>
-                  </svg>
-                </div> */}
-                <h4 className="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-                <a href="#" className="btn btn-secondary btn-sm">View full post</a>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 g-4">
-              <div className="col d-flex flex-column gap-2 py-3">
-                {/* <div className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
-                  <svg className="bi" width="1em" height="1em">
-                    <use></use>
-                  </svg>
-                </div> */}
-                <h4 className="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-                <a href="#" className="btn btn-secondary btn-sm">View full post</a>
-              </div>
-              <div className="col d-flex flex-column gap-2 py-3">
-                <div className="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary bg-gradient fs-4 rounded-3">
-                  <svg className="bi" width="5em" height="7em">
-                    <use></use>
-                  </svg>
                 </div>
-                <h4 className="fw-semibold mb-0 text-body-emphasis">Featured title</h4>
-                <p className="text-body-secondary">Paragraph of text beneath the heading to explain the heading.</p>
-                <a href="#" className="btn btn-secondary btn-sm">View full post</a>
-              </div>
-            </div>
+              </>
+            })}
           </div>
         </div>
       </div>
@@ -153,7 +125,7 @@ export default function Home() {
             <div className="fs-4 px-4 py-3 mt-5 mt-md-0">
               {LandingPageData.RIGHT_COLUMN_HEADING_TEXT}
             </div>
-            <LandingPageFeaturedContent items={featuredPosts}/>
+            <LandingPageFeaturedContent items={featuredPosts} />
           </div>
         </div>
       </div>
