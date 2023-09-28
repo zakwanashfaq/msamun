@@ -5,14 +5,14 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 
 function EventsPageItem(props: { item: TEvent }) {
-  return <>
+  return <div className="d-flex flex-column" id={props.item.id}>
     <span className="pb-3 text-dark fs-5" >
       {props.item.title}
     </span>
     <span className="pb-3">
       {props.item.content}
     </span>
-  </>
+  </div>
 }
 
 export default function EventsPage() {
