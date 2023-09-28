@@ -5,6 +5,7 @@ import Database from '@/db/db';
 import { TEvent } from '@/db/events';
 import { TFeatured } from '@/db/featured';
 import { LandingPageData } from '@/enums/texts/landingPageData';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 type TLandingPageFeaturedContentProps = {
@@ -84,7 +85,7 @@ export function UpcomingEvents(props: TUpcomingEventsProps) {
         {props.items?.map(item => {
           return <>
             <label className="list-group-item rounded-3 py-3" >
-              {item.title}
+              <Link className='text-dark' href={"/events#" + item.id}>{item.title}</Link> 
               <span className="d-block small opacity-50">{item.subtitle}</span>
             </label>
           </>
