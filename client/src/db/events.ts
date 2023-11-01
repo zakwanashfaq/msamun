@@ -8,6 +8,13 @@ export type TEvent = {
 }
 
 const event: { [key: string]: TEvent } = {
+    "gvhjkerg4397yiegrerhgkerg973gjh3rg8g73gfjher": {
+        id: "gvhjkerg4397yiegrerhgkerg973gjh3rg8g73gfjher",
+        title: "Mudabbir is something",
+        datePosted: 1695862372128,
+        eventDate: 1695862472128,
+        content: "Insert Content 1 Here about fall event.\nLine2\nLine3"
+    },
     "dy3u4tr3847yf3ugf837gfwojehd2iufr": {
         id: "dy3u4tr3847yf3ugf837gfwojehd2iufr",
         title: "MSA Fall Event",
