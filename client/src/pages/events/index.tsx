@@ -1,3 +1,4 @@
+import NavPanel, { OffCanvasNavPanel } from "@/components/navpanel";
 import PageTemplate from "@/components/pageTemplate";
 import Database from "@/db/db";
 import { TEvent } from "@/db/events";
@@ -38,18 +39,11 @@ export default function EventsPage() {
   }, [])
   return (
     <PageTemplate>
+      <div className="col-12 ">
+        <OffCanvasNavPanel menuItems={allEvents} mainTitle={"Events"}/>
+      </div>
       <div className="col-12 col-md-4 d-none d-md-block">
-        <div className="d-flex flex-column">
-
-        <span className="mt-1 text-dark fw-bold fs-3" >Events</span>
-        {
-          allEvents?.map(eventItem => {
-            return <>
-              <span className="mt-3 fs-5" ><Link className="text-dark" href={"#" + eventItem.id}>{eventItem.title}</Link></span>
-            </>
-          })
-        }
-        </div>
+        <NavPanel menuItems={allEvents} mainTitle={"Events"}/>
       </div>
       <div className="col-12 col-md-8 mt-5 px-4 px-md-5 pb-5 mt-md-3 d-flex flex-column">
         {
