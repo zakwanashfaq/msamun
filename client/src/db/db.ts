@@ -1,3 +1,4 @@
+import { eventIframes } from "./eventIframes";
 import event, { TEvent } from "./events";
 import featured, { TFeatured } from "./featured";
 import prayers from "./prayers";
@@ -14,6 +15,10 @@ class Database {
 
     static getEvents(): TEvent[]{
         return Object.values(event);
+    }
+
+    static getEventsIframes(): string[]{
+        return eventIframes;
     }
 
     static getPrayers(): TEvent[]{

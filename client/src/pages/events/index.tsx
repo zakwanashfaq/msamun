@@ -3,6 +3,7 @@ import PageTemplate from "@/components/pageTemplate";
 import Database from "@/db/db";
 import { TEvent } from "@/db/events";
 import Link from "next/link";
+import cheerio from 'cheerio';
 import { useState, useEffect } from 'react';
 
 function EventsPageItem(props: { item: TEvent }) {
@@ -30,16 +31,63 @@ function EventsPageItem(props: { item: TEvent }) {
   </div>
 }
 
+type TiframeDataExtractorReturnType = {
+  src: string,
+  height: string,
+  width: string
+}
+
+const iframeDataExtractor = (iframeString: string): TiframeDataExtractorReturnType => {
+
+  const abd = cheerio.load(iframeString);
+  const iframeElement = abd('iframe');
+
+  let src, height, width;
+  if (iframeElement) {
+    // Extract src, height, and width attributes
+    src = iframeElement.attr('src');
+    height = iframeElement.attr('height');
+    width = iframeElement.attr('width');
+
+  } else {
+    console.log('No iframe element found in the provided string.');
+  }
+
+  return {
+    src: src || "",
+    height: height || "",
+    width: width || ""
+  }
+}
+
+function EventFacebookIframe(props: { iframeString: string }) {
+  const iFrameDataObj = iframeDataExtractor(props.iframeString);
+  return (
+    <>
+      <div className="p-1">
+        <iframe
+          className=""
+          height={iFrameDataObj.height}
+          src={iFrameDataObj.src}
+          width={iFrameDataObj.width}
+        ></iframe>
+      </div>
+    </>
+  );
+}
+
 export default function EventsPage() {
-  const [allEvents, setAllEvents] = useState<TEvent[] | null>(null);
+  //const [allEvents, setAllEvents] = useState<TEvent[] | null>(null);
+  const [allFacebookEvents, setAllFacebookEvents] = useState<string[] | null>(null);
 
   useEffect(() => {
-    const fetchedEvents: TEvent[] = Database.getEvents();
-    setAllEvents(fetchedEvents);
+    const fetchedEvents = Database.getEventsIframes();
+    setAllFacebookEvents(fetchedEvents);
   }, [])
   return (
     <PageTemplate>
-      <div className="col-12 ">
+      {/** Old Navigation Code system */}
+      {/* <div className="col-12 ">
         <OffCanvasNavPanel menuItems={allEvents} mainTitle={"Events"}/>
       </div>
       <div className="col-12 col-md-4 d-none d-md-block">
@@ -53,6 +101,37 @@ export default function EventsPage() {
             </>
           })
         }
+      </div> */}
+      {/** Old Navigation Code system end*/}
+
+      <div className="row d-flex justify-content-center ">
+        <div className="col-12 col-xl-6">
+          {
+            allFacebookEvents?.map((fbEventItem, index) => {
+              const isOdd = index % 2 === 0;
+              if (!isOdd) {
+                return;
+              }
+              return (
+                <EventFacebookIframe iframeString={fbEventItem} />
+                
+              );
+            })
+          }
+        </div>
+        <div className="col-12 col-xl-6">
+        {
+            allFacebookEvents?.map((fbEventItem, index) => {
+              const isOdd = index % 2 === 0;
+              if (isOdd) {
+                return;
+              }
+              return (
+                <EventFacebookIframe iframeString={fbEventItem} />
+              );
+            })
+          }
+        </div>
       </div>
     </PageTemplate>
   )
