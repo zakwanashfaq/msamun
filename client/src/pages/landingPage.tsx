@@ -1,3 +1,4 @@
+import { DonateButton } from '@/components/donateButton';
 import { Footer } from '@/components/footer';
 import Hero from '@/components/hero';
 import { Navbar } from '@/components/navbar';
@@ -30,7 +31,7 @@ function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
             {/**@ts-ignore */}
             <h2 className="fw-bold text-body-emphasis">{mainFeature?.title}</h2>
             {/**@ts-ignore */}
-            <p className="text-body-secondary">{mainFeature?.content}</p>
+            <pre className="text-body-secondary w-auto">{mainFeature?.content}</pre>
             {/* <a href="#" className="btn btn-secondary btn-md">View full post</a> */}
           </div>
           <div className="row px-4">
@@ -44,7 +45,7 @@ function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
                     </svg>
                   </div> */}
                   <h4 className="fw-semibold mb-0 text-body-emphasis">{items.title}</h4>
-                  <p className="text-body-secondary">{items.content}</p>
+                  <pre className="text-body-secondary">{items.content}</pre>
                   {/* <a href="#" className="btn btn-secondary btn-sm">View full post</a> */}
                 </div>
                 </div>
@@ -65,9 +66,7 @@ function DonateSection() {
           <div className='pb-4 fw-bold text-success-emphasis'>
             {LandingPageData.DONATION_DESCRIPTION_TEXT}
           </div>
-          <button className=" btn text-light bg-success p-md-3" >
-            {LandingPageData.LARGE_DONATION_BUTTON_TEXT}
-          </button>
+          <DonateButton buttonLabel={LandingPageData.LARGE_DONATION_BUTTON_TEXT}/>
         </div>
       </div>
     </>
@@ -79,6 +78,19 @@ type TUpcomingEventsProps = {
 }
 
 export function UpcomingEvents(props: TUpcomingEventsProps) {
+  if (props.items?.length === 0) {
+    return (
+      <>
+        <div className="list-group list-group-checkable d-grid gap-2 border-0">
+            <label className="list-group-item rounded-3 py-3" >
+              <Link className='text-dark' href={"/"}>{"No Upcoming Events"}</Link> 
+              <span className="d-block small opacity-50">{"Upcoming Events will show up here"}</span>
+            </label>
+            
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <div className="list-group list-group-checkable d-grid gap-2 border-0">
@@ -100,7 +112,7 @@ export default function Home() {
   const [featuredPosts, setFeaturedPosts] = useState<TFeatured[] | null>(null);
 
   useEffect(() => {
-    const fetchedUpcomingEvents = Database.getUpcomingEvents(["dy3u4tr3847yf3ugf837gfwojehd2iufr", "fjg34o8t834gfo34gf873giuhf82792y9", "xthv53xtxqq8lj525h1t696a4oostr6j", "dy3u4tr3847yf3ugf837gfwojehd2iufr2"]);
+    const fetchedUpcomingEvents = Database.getUpcomingEvents([]);
     setUpcomingEvents(fetchedUpcomingEvents);
 
     const featuredPosts = Database.getFeatured();

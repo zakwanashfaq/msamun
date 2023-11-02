@@ -1,6 +1,7 @@
 // pages/_app.tsx
 
 import "../css/nav.css"
+import '../css/featured.css'
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';

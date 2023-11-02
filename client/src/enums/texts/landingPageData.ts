@@ -9,5 +9,5 @@ export enum LandingPageData {
     DONATION_DESCRIPTION_TEXT = "Support MSA's mission in fostering Islamic values, community engagement, and spiritual growth among students. Your donation ensures continuity of enlightening talks, workshops, and events, bridging knowledge and faith for a brighter future. Every contribution counts in nurturing a vibrant Muslim student community.",
     LARGE_DONATION_BUTTON_TEXT = "DONATE FOR OUR CAUSE",
     LEFT_COLUMN_HEADING_TEXT = "Upcoming events",
-    RIGHT_COLUMN_HEADING_TEXT = "Featured"
+    RIGHT_COLUMN_HEADING_TEXT = ""
 }

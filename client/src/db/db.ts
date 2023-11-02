@@ -1,5 +1,6 @@
 import event, { TEvent } from "./events";
 import featured, { TFeatured } from "./featured";
+import prayers from "./prayers";
 
 
 class Database {
@@ -13,6 +14,10 @@ class Database {
 
     static getEvents(): TEvent[]{
         return Object.values(event);
+    }
+
+    static getPrayers(): TEvent[]{
+        return Object.values(prayers);
     }
 
     static getUpcomingEvents(eventIds: string[]): TEvent[]{

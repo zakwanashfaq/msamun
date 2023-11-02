@@ -1,6 +1,7 @@
 import { LandingPageData } from "@/enums/texts/landingPageData";
 import { NavLink } from "@/enums/navLinks";
 import Link from "next/link";
+import { DonateButton } from "./donateButton";
 
 export function Navbar(props: any) {
     return (
@@ -25,7 +26,7 @@ export function Navbar(props: any) {
                         <span className="fs-4 fw-bold bg-gradient m-0 py-1 px-3 animate-bg">MSA-MUN</span>
                     </Link>
                     <div className=" mb-3 mb-lg-0 d-flex justify-content-center">
-                        <button className="btn btn-success">{LandingPageData.DONATION_BUTTON_TEXT}</button>
+                        <DonateButton buttonLabel={LandingPageData.DONATION_BUTTON_TEXT} />
                     </div>
                 </div>
             </header>
