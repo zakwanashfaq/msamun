@@ -30,7 +30,7 @@ function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
             {/**@ts-ignore */}
             <h2 className="fw-bold text-body-emphasis">{mainFeature?.title}</h2>
             {/**@ts-ignore */}
-            <p className="text-body-secondary">{mainFeature?.content}</p>
+            <pre className="text-body-secondary w-auto">{mainFeature?.content}</pre>
             {/* <a href="#" className="btn btn-secondary btn-md">View full post</a> */}
           </div>
           <div className="row px-4">
@@ -44,7 +44,7 @@ function LandingPageFeaturedContent(props: TLandingPageFeaturedContentProps) {
                     </svg>
                   </div> */}
                   <h4 className="fw-semibold mb-0 text-body-emphasis">{items.title}</h4>
-                  <p className="text-body-secondary">{items.content}</p>
+                  <pre className="text-body-secondary">{items.content}</pre>
                   {/* <a href="#" className="btn btn-secondary btn-sm">View full post</a> */}
                 </div>
                 </div>
