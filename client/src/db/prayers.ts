@@ -31,11 +31,11 @@ There is also a prayer spot on the topmost part of the west-side stairs.
         content: `
 Jumma Prayer takes place in three places in St. John's
         
-MUN Chapel:
+MUN Chapel: Fridays at 1 p.m. and 2 p.m.  
         
-Farmers Market(ICNA NL):
+Farmers Market(ICNA NL): Fridays at 12:40 p.m. and 1:25 p.m.  
         
-Mashjid AL Noor(MANAL):
+Mashjid AL Noor(MANAL):   
         `
     },
     "cbjkdhviwdgiu2g74tfeiugefhjgfhjwgfwdf": {
