@@ -9,20 +9,42 @@ export type TPrayers = {
 }
 
 const prayers: { [key: string]: TPrayers } = {
+    "dsnvjsnvsfmnvkjfsbvkjrwuovbwrvbiwjfbvjwbvkjwbv": {
+        id: "dsnvjsnvsfmnvkjfsbvkjrwuovbwrvbiwjfbvjwbvkjwbv",
+        title: "Musallahs",
+        subtitle: "Daily prayers",
+        datePosted: 1695862372128,
+        eventDate: 1695862472128,
+        content: `There are multiple musallahs where daily prayer takes place.
+At 10 paton street(ICNA NL) daily 5 prayers take place.
+At Mosque only fajr, magrib and isha takes place.
+At University ER3040 you can pray whenever you want. Just make sure there are no sisters praying when you enter.
+There is also a prayer spot on the topmost part of the west-side stairs.
+`
+    },
     "cgfdwhgf7283rtf2uirgfjhwdfyu2rgfhwdbvjhwrfv": {
         id: "cgfdwhgf7283rtf2uirgfjhwdfyu2rgfhwdbvjhwrfv",
-        title: "Jumma Prayers",
+        title: "Jumma",
         subtitle: "Friday prayers",
         datePosted: 1695862372128,
         eventDate: 1695862472128,
-        content: "Insert Content 1 Here about fall event.\nLine2\nLine3"
+        content: `
+Jumma Prayer takes place in three places in St. John's
+        
+MUN Chapel:
+        
+Farmers Market(ICNA NL):
+        
+Mashjid AL Noor(MANAL):
+        `
     },
     "cbjkdhviwdgiu2g74tfeiugefhjgfhjwgfwdf": {
         id: "cbjkdhviwdgiu2g74tfeiugefhjgfhjwgfwdf",
         title: "Mashjid AL Noor",
         datePosted: 1695862372128,
         eventDate: 1695862472128,
-        content: "Insert Content 2 Here about fall event.\nLine2\nLine3"
+        content: `Address: 430 Logy Bay Road, St. John's, NL
+Website: https://www.manal.ca/`
     },
     "fjg34o8t83dhc2ieuhf927fi2uegfiuwefiuwegfiuwegfuge2fj": {
         id: "fjg34o8t83dhc2ieuhf927fi2uegfiuwefiuwegfiuwegfuge2fj",
@@ -30,7 +52,8 @@ const prayers: { [key: string]: TPrayers } = {
         location: "10 Paton Street",
         datePosted: 1695862372128,
         eventDate: 1695862472128,
-        content: "Insert Content 3 Here about fall event.\nLine2\nLine3"
+        content: `10 Paton Street, St. John's, NL
+Website: https://icnanewfoundland.ca/`
     },
 
 }

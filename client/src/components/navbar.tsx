@@ -14,7 +14,7 @@ export function Navbar(props: any) {
                         <li className="nav-item"><a href={NavLink.Prayers} className="nav-link link-body-emphasis px-3">Prayers</a></li>
                         <li className="nav-item"><a href={NavLink.Executives} className="nav-link link-body-emphasis px-3">Executives</a></li>
                         <li className="nav-item"><a href={NavLink.Contacts} className="nav-link link-body-emphasis px-3">Contacts</a></li>
-                        <li className="nav-item"><a href={NavLink.FAQs} className="nav-link link-body-emphasis ps-3 pe-0">FAQs</a></li>
+                        {/* <li className="nav-item"><a href={NavLink.FAQs} className="nav-link link-body-emphasis ps-3 pe-0">FAQs</a></li> */}
                     </ul>
 
                 </div>

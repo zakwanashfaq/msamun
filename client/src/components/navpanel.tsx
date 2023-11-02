@@ -27,7 +27,7 @@ export function OffCanvasNavPanel(props: TNavPanelProps) {
                         {
                             props.menuItems?.map(eventItem => {
                                 return <>
-                                    <span className="mt-3 fs-5" ><Link className="text-dark" href={"#" + eventItem.id}>{eventItem.title}</Link></span>
+                                    <span className="mt-3 fs-5" key={eventItem.id} ><Link className="text-dark" key={eventItem.id} href={"#" + eventItem.id}>{eventItem.title}</Link></span>
                                 </>
                             })
                         }
@@ -46,7 +46,7 @@ export function NavPanel(props: TNavPanelProps) {
                 {
                     props.menuItems?.map(eventItem => {
                         return <>
-                            <span className="mt-3 fs-5" ><Link className="text-dark" href={"#" + eventItem.id}>{eventItem.title}</Link></span>
+                            <span className="mt-3 fs-5" key={eventItem.id} ><Link className="text-dark" href={"#" + eventItem.id}>{eventItem.title}</Link></span>
                         </>
                     })
                 }

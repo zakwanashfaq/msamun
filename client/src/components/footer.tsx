@@ -14,7 +14,7 @@ export function Footer() {
                                 <li className="nav-item mb-2"><a href={NavLink.Prayers} className="nav-link text-light p-0">Prayers</a></li>
                                 <li className="nav-item mb-2"><a href={NavLink.Executives} className="nav-link text-light p-0">Executives</a></li>
                                 <li className="nav-item mb-2"><a href={NavLink.Contacts} className="nav-link text-light p-0">Contacts</a></li>
-                                <li className="nav-item mb-2"><a href={NavLink.FAQs} className="nav-link text-light p-0">FAQs</a></li>
+                                {/* <li className="nav-item mb-2"><a href={NavLink.FAQs} className="nav-link text-light p-0">FAQs</a></li> */}
                             </ul>
                         </div>
                         <div className="col-md-5 offset-md-1 mb-3 ms-auto">
