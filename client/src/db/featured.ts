@@ -30,7 +30,7 @@ In addition to addressing the needs of its members, the MSA also aims to raise a
         content: `Present goals of the group: The group is continually working toward internal and external growth. Internally, it aims to help new international Muslim students adjust to Canadian culture by making connections between newcomers and long-time members. These connections, along with other programs offered by the MSA, help Muslim students adjust to life in Canada by providing an understanding of different cultural norms, usually around gender, sexuality, and diet. Externally, the MSA assists Muslim students in resolving issues of discrimination from the public and within the university.`
     },
     {
-        id: "dvfdfvbdfbdbjbejbekfbeb",
+        id: "vkjdfhbkjfdhbkjfdbiurebjhfdbkjebekjbetuibetjb",
         title: "Life in St. John's in NL",
         position: 3,
         datePosted:  1695862372128,
