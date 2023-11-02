@@ -11,9 +11,9 @@ export default function Hero() {
                     <p className="lead mb-1">{LandingPageData.HERO_TEXT_SUB_HEADING_L1}</p>
                     <p className="lead mb-4">{LandingPageData.HERO_TEXT_SUB_HEADING_L2}</p>
                 </div>
-                <div className="mx-auto">
+                {/* <div className="mx-auto">
                     <button className="btn bg-dark-subtle p-md-3" >{LandingPageData.HERO_BUTTON_TEXT}</button>
-                </div>
+                </div> */}
                 <br />
             </div>
         </>
