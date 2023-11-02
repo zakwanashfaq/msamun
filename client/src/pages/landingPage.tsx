@@ -1,3 +1,4 @@
+import { DonateButton } from '@/components/donateButton';
 import { Footer } from '@/components/footer';
 import Hero from '@/components/hero';
 import { Navbar } from '@/components/navbar';
@@ -65,9 +66,7 @@ function DonateSection() {
           <div className='pb-4 fw-bold text-success-emphasis'>
             {LandingPageData.DONATION_DESCRIPTION_TEXT}
           </div>
-          <button className=" btn text-light bg-success p-md-3" >
-            {LandingPageData.LARGE_DONATION_BUTTON_TEXT}
-          </button>
+          <DonateButton buttonLabel={LandingPageData.LARGE_DONATION_BUTTON_TEXT}/>
         </div>
       </div>
     </>
