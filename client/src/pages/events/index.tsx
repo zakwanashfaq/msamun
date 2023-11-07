@@ -113,7 +113,7 @@ export default function EventsPage() {
                 return;
               }
               return (
-                <EventFacebookIframe iframeString={fbEventItem} />
+                <EventFacebookIframe key={fbEventItem} iframeString={fbEventItem} />
                 
               );
             })
@@ -127,7 +127,7 @@ export default function EventsPage() {
                 return;
               }
               return (
-                <EventFacebookIframe iframeString={fbEventItem} />
+                <EventFacebookIframe key={fbEventItem} iframeString={fbEventItem} />
               );
             })
           }
