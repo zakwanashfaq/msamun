@@ -16,7 +16,8 @@ export default function ExecutivesPage() {
           <div className="card-body">
             <h5 className="card-title fw-bold pb-3">Contact Information</h5>
             <p className="mb-0">Facebook Group: <a className="fw-bold" href="https://www.facebook.com/groups/7510890852" target="_blank">https://www.facebook.com/groups/7510890852</a></p>
-            <p className="mb-0">Email: <a className="fw-bold">msamun@mun.ca</a></p>
+            <p className="mb-0">Email: <a className="fw-bold">msapresident@mun.ca</a></p>
+            <p className="mb-0">Email(secondary): <a className="fw-bold">msamun786@gmail.com</a></p>
           </div>
         </div>
         <div className="pb-5">
