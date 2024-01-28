@@ -2,9 +2,13 @@
 
 **Things you need to know:**
 bootstrap: https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
 react.js: https://react.dev/
+
 html: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+
 css: https://developer.mozilla.org/en-US/docs/Learn/CSS
+
 next.js: (just the basics) https://nextjs.org/learn?utm_source=next-site&utm_medium=homepage-cta&utm_campaign=home
 
 **Intructions to start frontend development server**
