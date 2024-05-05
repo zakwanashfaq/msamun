@@ -1,35 +1,75 @@
 import PageTemplate from "@/components/pageTemplate";
+import { TExecutive, executives } from "@/db/executives";
+import { useState, useEffect } from "react";
 
-type SketchfabEmbedProps = {
-  title?: string;
-  src?: string;
-};
-
-const SketchfabEmbed: React.FC<SketchfabEmbedProps> = ({ title = "Kaaba", src = "https://sketchfab.com/models/45d4b0b4404a4ad7b3f7235f7a10382c/embed?autospin=1&preload=1&dnt=1" }) => {
+export function ExecutiveItem(props: { item: TExecutive }) {
   return (
-    <div className="sketchfab-embed-wrapper">
-      <iframe 
-        title={title}
-        frameBorder="0" 
-        allowFullScreen 
-        height={300}
-        width="300px"
-        allow="autoplay; fullscreen; xr-spatial-tracking" 
-        src={src}>
-      </iframe>
+    <div className="d-flex flex-column pb-5" id={props.item.id}>
+      <div className="row">
+        <div className="col-md-6">
+          <div className="pb-1 text-dark fs-5 fw-bold">{props.item.name}</div>
+          <div className="pb-2 text-dark">{props.item.position}</div>
+          <div className="pb-2 text-dark">{props.item.contact}</div>
+          <div className="pb-2 text-dark">
+            Start Date: {props.item.startDate}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default function ExecutivesPage() {
+  const [executiveItems, setExecutiveItems] = useState<TExecutive[] | null>(
+    null
+  );
+
+  useEffect(() => {
+    setExecutiveItems(Object.values(executives));
+  }, []);
+
   return (
     <PageTemplate>
-      <div className="d-flex justify-content-center align-items-center p-5 text-wrap">
-        <h1 className="fw-bold">This page is under construction. Sorry for the inconvenience</h1>
+      <div className="col-12 ">
+        <div className="col-12 col-md-8 mt-5 px-4 px-md-5 pb-5 mt-md-3 d-flex flex-column">
+          {executiveItems?.map((execItem) => (
+            <ExecutiveItem key={execItem.id} item={execItem} />
+          ))}
+        </div>
       </div>
     </PageTemplate>
-  )
+  );
 }
+// type SketchfabEmbedProps = {
+//   title?: string;
+//   src?: string;
+// };
+
+// const SketchfabEmbed: React.FC<SketchfabEmbedProps> = ({ title = "Kaaba", src = "https://sketchfab.com/models/45d4b0b4404a4ad7b3f7235f7a10382c/embed?autospin=1&preload=1&dnt=1" }) => {
+//   return (
+//     <div className="sketchfab-embed-wrapper">
+//       <iframe
+//         title={title}
+//         frameBorder="0"
+//         allowFullScreen
+//         height={300}
+//         width="300px"
+//         allow="autoplay; fullscreen; xr-spatial-tracking"
+//         src={src}>
+//       </iframe>
+//     </div>
+//   );
+// }
+
+// export default function ExecutivesPage() {
+//   return (
+//     <PageTemplate>
+//       <div className="d-flex justify-content-center align-items-center p-5 text-wrap">
+//         <h1 className="fw-bold">This page is under construction. Sorry for the inconvenience</h1>
+//       </div>
+//     </PageTemplate>
+//   )
+// }
 
 // export default function ExecutivesPage() {
 //   return (
