@@ -1,4 +1,3 @@
-
 // type StringDictionary = {
 //     [key: string]: string;
 // };
@@ -8,10 +7,11 @@
 // }
 
 export enum NavLink {
-    Home = "/",
-    Events = "/events",
-    Prayers = "/prayers",
-    Executives = "/executives",
-    Contacts = "/contacts",
-    FAQs = "/faqs",
+  Home = "/",
+  Events = "/events",
+  Prayers = "/prayers",
+  Executives = "/executives",
+  Contacts = "/contacts",
+  Auth = "/auth",
+  FAQs = "/faqs",
 }
